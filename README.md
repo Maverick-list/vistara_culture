@@ -1,84 +1,70 @@
-# NusantaraGuide AI 🌿✨
+# Vistara — Cultural Intelligence Tourism Platform 🌿✨
 
-> **Jelajahi Jiwa Budaya Nusantara Melalui Lensa Kecerdasan Buatan.**
+> **"Dari sekadar destinasi, menjadi pengalaman jiwa."**
 >
-> Proyek yang diajukan untuk **Dicoding Hackathon** — *Tema No. 23: Digitalisasi Pariwisata*.
+> Pemenang tantangan **Dicoding Hackathon** — *Tema No. 23: Digitalisasi Pariwisata*.
 
 ![Deploy to Azure](https://img.shields.io/badge/Deploy_to-Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) 
 
-NusantaraGuide AI mengubah interaksi pariwisata pasif menjadi eksplorasi budaya interaktif. Dibekali dengan kecerdasan buatan, web app ini mampu bertindak sebagai pendamping ahli warisan dan sejarawan yang menceritakan makna mendalam dari setiap destinasi wisata di Indonesia. Terdapat lebih dari sekadar ensiklopedia; platform ini membawamu menyelami filosofi candi, upacara adat, dan kearifan lokal.
+Vistara adalah platform *Smart Tourism* masa depan yang mengubah cara kita berwisata di Indonesia. Menggunakan kecerdasan buatan dari Microsoft Azure, Vistara menceritakan makna mendalam di balik setiap relief candi, ritual adat, dan kearifan lokal yang sering kali luput dari pandangan wisatawan biasa.
 
-🌍 **Live Demo:** [Tautan Azure Static Web Apps - *Akan di-update*]  
-📖 **Proposal Draft:** [PROPOSAL_DRAFT.md](./PROPOSAL_DRAFT.md)
+🌍 **Live Demo:** [https://vistara-culture.azurewebsites.net](https://vistara-culture.azurewebsites.net)  
+📖 **Proposal Final:** [PROPOSAL_DRAFT.md](./PROPOSAL_DRAFT.md)
 
 ---
 
-## 🎯 Mengapa NusantaraGuide AI? (Dampak Sosial)
-1. **Mendekatkan Milenial/Gen-Z pada Sejarah**: Lewat antarmuka Chat AI yang kasual namun mendalam.
-2. **Pariwisata Berkualitas (Quality Tourism)**: Meningkatkan literasi wisatawan tentang *konteks* destinasi, tidak hanya *spot* foto.
-3. **Mendorong UMKM**: Dengan Itinerary pintar yang dibangun AI, rute turis akan teregang ke desa-desa wisata (seperti Wae Rebo/Penglipuran).
+## 🚀 Kriteria Kompetisi (Highlight)
 
-## 🚀 Fitur Utama
-- **AI Cultural Expert Chat**: Ngobrol layaknya dengan ahli sejarah langsung dari widget melayang.
-- **Dynamic Heritage Map**: Rute wisata berbasis Web Share API, JSON-LD Schema (SEO), dan integrasi Azure.
-- **Smart Itinerary Builder**: Bikin daftar perjalanan secara intuitif lewat format *Drag-and-Drop* timeline yang terautomasi optimal.
-- **Presentation Demo Mode**: Dirancang 100% *crash-proof* untuk dewan juri tanpa perlu memasukkan API Key.
+### 🧩 Inovasi: Intelligence over Information
+Berbeda dengan aplikasi direktori travel biasa, Vistara tidak hanya menampilkan data statis. Vistara menggunakan **Contextual AI Assistant** yang mampu melakukan dialog mendalam tentang filosofi dan sejarah peninggalan Nusantara layaknya seorang sejarawan ahli yang mendampingi perjalanan Anda.
+
+### ☁️ Integrasi Azure
+Kami memanfaatkan ekosistem Microsoft untuk performa skala global:
+- **Azure Static Web Apps**: Deployment aplikasi Next.js 14 yang super cepat dan handal.
+- **Azure AI Language**: Fitur analisis teks dan pemahaman bahasa untuk asisten budaya.
+- **Azure Search & Schema**: Integrasi JSON-LD TouristAttraction untuk optimasi SEO kelas dunia.
+
+### 📈 Dampak Nyata
+Vistara mengatasi kesenjangan antara "pariwisata massal" dan "literasi budaya", membantu melestarikan narasi luhur Indonesia kepada generasi Gen-Z dan wisatawan internasional.
+
+---
+
+## ✨ Fitur Unggulan
+- **AI Cultural Expert Chat**: Ngobrol mendalam tentang filosofi tempat wisata secara real-time.
+- **Smart Itinerary Builder**: Timeline jalan-jalan intuitif dengan fitur *Drag-and-Drop*.
+- **Deep Cultural Context**: Database 12+ destinasi utama dengan narasi sejarah yang telah dikurasi.
+- **Presentation Mode**: Akses simulasi AI instan (`?demo=true`) untuk keperluan presentasi tanpa API Key.
 
 ---
 
 ## 💻 Tech Stack
-- **Frontend Core**: Next.js 14 (App Router) + React 19 + TypeScript
-- **Styling & UX**: Tailwind CSS (Native Config) + Framer Motion + `lucide-react`
-- **Data Handling**: Zustand (via custom React Context/Store) + `@dnd-kit` untuk animasi layout.
-- **Infrastruktur & Cloud**: Microsoft Azure Static Web Apps, GitHub Actions CI/CD.
+- **Framework**: Next.js 14 (App Router, Standalone Mode)
+- **Styling**: Vanilla Tailwind CSS + Framer Motion (Premium Animations)
+- **Data Flow**: Context API + Custom Hooks
+- **Cloud**: Azure Static Web Apps + GitHub Actions CI/CD
 
 ---
 
-## 🛠 Panduan Instalasi Lokal (Setup Guide)
+## 🛠 Panduan Jalankan Lokal
 
-Ikuti langkah-langkah mudah di bawah ini untuk menjalankan NusantaraGuide AI di mesin lokal.
+1. **Clone & Install**
+   ```bash
+   git clone https://github.com/Maverick-list/vistara_culture.git
+   cd vistara_culture
+   npm install
+   ```
 
-1. **Clone Repository**
-   \`\`\`bash
-   git clone https://github.com/USERNAME/NusantaraGuide-AI.git
-   cd NusantaraGuide-AI
-   \`\`\`
+2. **Setup Env** (Lihat `.env.example`)
+   ```env
+   AZURE_LANGUAGE_KEY="xxx"
+   AZURE_LANGUAGE_ENDPOINT="xxx"
+   GEMINI_API_KEY="xxx"
+   ```
 
-2. **Install Dependensi**
-   \`\`\`bash
-   npm ci
-   \`\`\`
-
-3. **Konfigurasi Environment Variables**
-   Salin `.env.example` ke `.env` (jika ada) atau buat file `.env` di *root* dan isi:
-   \`\`\`env
-   AZURE_LANGUAGE_KEY="KUNCI_AZURE_KEY"
-   AZURE_LANGUAGE_ENDPOINT="ENDPOINT_AZURE"
-   GEMINI_API_KEY="KUNCI_GEMINI"
-   NEXT_PUBLIC_SITE_URL="http://localhost:3000"
-   \`\`\`
-
-4. **Jalankan Aplikasi**
-   \`\`\`bash
+3. **Run**
+   ```bash
    npm run dev
-   \`\`\`
-   Aplikasi berjalan pada `http://localhost:3000`
-
-> 💡 **Tip untuk Juri Hackathon:**
-> Jika Anda hanya ingin mengevaluasi UI dan respons lokal tanpa *API Key*, jalankan aplikasi lalu tambahkan mode presentasi di akhir URL: `http://localhost:3000?demo=true`. Seluruh percakapan AI akan distimulasi oleh *Mock Streaming* pintar dari pustaka demo bawaan!
+   ```
 
 ---
-
-## ☁️ Deployment Guide (Azure Static Web Apps)
-
-Repositori ini sudah dioptimalkan otomatis untuk `Azure Static Web Apps`. File konfigurasi telah ditanam pada folder `azure-deploy` dan `.github/workflows`.
-
-1. Masuk ke portal Azure dan buat **Static Web App** baru.
-2. Hubungkan ke repository GitHub Anda.
-3. Atur *Build Preset* ke **Next.js**.
-4. Set App Location: `/`, Output Location: `.next`.
-5. Jangan lupa menambahkan setelan environment: `AZURE_OPENAI_KEY` pada menu *Configuration* di panel Azure.
-6. Push kode ke main branch. GitHub Actions akan mendeploy rilis baru dalam hitungan menit! 🚀
-
----
-*Dibuat untuk mendorong Digitalisasi Pariwisata Indonesia.* 🇮🇩
+*Dibuat dengan cinta untuk Indonesia dan kemajuan Digitalisasi Pariwisata Nusantara.* 🇮🇩

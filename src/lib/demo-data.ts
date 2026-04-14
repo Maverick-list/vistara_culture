@@ -7,79 +7,75 @@ export interface DemoConversation {
 
 export const DEMO_CONVERSATIONS: DemoConversation[] = [
   {
-    keywords: ["borobudur", "candi", "filosofi", "mandala", "jawa"],
-    response: `Keindahan Candi Borobudur bukan sekadar pada tumpukan batu andesitnya, melainkan pada **jiwa kosmologi** yang dirangkainya. Borobudur sejatinya adalah sebuah *Mandala* raksasa—diagram suci dalam agama Buddha Mahayana yang memetakan struktur alam semesta sekaligus panduan perjalanan spiritual manusia menuju pencerahan (Nirwana).
+    keywords: ["borobudur", "relief", "makna", "filosofi", "mandala"],
+    response: `Candi Borobudur bukan sekadar tumpukan batu, melainkan sebuah **Mandala Tiga Dimensi** yang sangat kompleks, mencerminkan pemahaman mendalam tentang kosmologi Buddha Mahayana. Struktur candi dirancang untuk memandu peziarah melalui tiga tingkatan kesadaran spiritual:
 
-Secara arsitektural, ia dibagi menjadi tiga ranah kesadaran:
+1. **Kamadhatu (Kaki Candi):** Melambangkan ranah hawa nafsu. Di sini terdapat relief *Karmawibhangga* yang sering kali tertutup, menggambarkan hukum sebab-akibat yang mengikat manusia pada siklus penderitaan akibat hasrat duniawi yang tak terkendali.
+2. **Rupadhatu (Lima Teras Persegi):** Mewakili ranah wujud. Peziarah telah mulai melepaskan nafsu tetapi masih terikat pada bentuk fisik. Ribuan relief di sini mengisahkan *Lalitawistara* (kehidupan Buddha) dan *Jataka* (kisah keluhuran budi), mengajarkan kebijaksanaan melalui teladan visual yang anggun.
+3. **Arupadhatu (Tiga Teras Lingkaran):** Ranah tanpa wujud. Di sini tidak ada lagi relief, hanya stupa-stupa berlubang yang mengelilingi satu Stupa Induk raksasa. Lubang berbentuk belah ketupat dan persegi melambangkan proses transisi menuju kekosongan paripurna (*Sunyata*).
 
-1. **Kamadhatu (Kaki Candi):** Simbol ranah hawa nafsu. Di sini terdapat relief *Karmawibhangga* yang tersembunyi, menggambarkan hukum sebab-akibat (karma) dan keterikatan manusia pada hasrat duniawi yang sering kali merusak.
-2. **Rupadhatu (Badan Candi):** Simbol ranah wujud. Manusia mulai melepaskan nafsu, tetapi masih terikat pada wujud dan bentuk. Terdapat ribuan relief dari kitab *Lalitawistara* dan *Jataka* yang mengisahkan perjuangan Sidharta Gautama. Berjalan memutarinya (Pradaksina) adalah simulasi proses belajar yang panjang.
-3. **Arupadhatu (Puncak Candi):** Simbol ranah tak berwujud. Di tiga rupa lingkaran konsentris ini, tidak ada lagi relief ukiran. Hanya stupa-stupa berlubang yang mengelilingi satu Stupa Induk raksasa yang tertutup rapat. Ini melambangkan puncak pencapaian *Moksa* atau *Nirwana*—kekosongan paripurna (Sunyata) di mana jiwa telah melepaskan segala wujud dan keterikatan penderitaan.
-
-*Pertanyaan untukmu:* Saat kamu meniti setiap anak tangga Borobudur, apakah kamu merasa sedang melakukan perjalanan fisik, atau justru perjalanan meluruhkan "ego" ke dalam dirimu sendiri?`
+Secara filosofis, Borobudur adalah simbol bunga lotus yang mekar di tengah kolam (danau purba yang dulu mengelilingi candi). Angka-angka pada jumlah arca dan stupa pun mengikuti pola matematik spiritual yang menghubungkan bumi dengan langit. Bangunan ini adalah pernyataan politik dan spiritual Dinasti Syailendra bahwa kekuasaan mereka berpijak pada nilai-nilai Dharma yang kekal.`
   },
   {
-    keywords: ["ngaben", "bali", "ritual", "kematian", "moksa"],
-    response: `Bagi masyarakat Hindu Bali, kematian bukanlah sebuah akhir yang disesali dengan tangisan meluap, melainkan sebuah **transisi agung**. Upacara **Ngaben** adalah salah satu manifestasi paling puitis dari filosofi ini—sebuah perayaan pelepasan.
+    keywords: ["ngaben", "bakar", "jenazah", "bali", "hindu", "reinkarnasi"],
+    response: `Dalam pandangan Hindu Bali, upacara **Ngaben** bukanlah sebuah perpisahan yang tragis, melainkan peristiwa sakral untuk membantu jiwa (*Atman*) melepaskan diri dari ikatan dunianya. Kematian dianggap sebagai transisi, di mana tubuh fisik hanyalah "kotak pinjaman" dari alam semesta.
 
-Dalam kosmologi Hindu, tubuh manusia terbentuk dari *Panca Maha Bhuta* (lima elemen semesta):
-- *Pertiwi* (tanah)
-- *Apah* (air)
-- *Teja* (api)
-- *Bayu* (angin)
-- *Akasa* (ruang hampa/eter)
+Tubuh manusia terdiri dari *Panca Maha Bhuta* (tanah, air, api, angin, dan ruang). Melalui api suci Ngaben, kelima elemen ini dilebur kembali ke asal mereka agar tidak menghambat perjalanan roh. Tanpa pembakaran, roh dipercaya akan tetap terperangkap di antara dunia manusia dan dunia dewa, mengalami kebingungan dan penderitaan.
 
-Ketika nyawa (*Atman*) meninggalkan raga, tubuh fisik tersebut "meminjam" elemen-elemen ini terlalu lama. Proses kremasi dalam Ngaben menggunakan kekuatan sakral **Agni (api)** untuk secara cepat menyucikan dan melebur kembali kelima elemen tersebut agar kembali harmonis ke alam semesta. 
+Itulah sebabnya Ngaben sering kali dirayakan dengan semarak dan penuh warna, bukan dengan isak tangis yang berlebihan. Tangis keluarga dipercaya dapat menghambat langkah roh menuju *Moksa* atau *Samsara* (reinkarnasi). Ngaben adalah bukti cinta terakhir keluarga—memastikan bahwa orang yang mereka cintai memiliki "tiket" yang bersih untuk melanjutkan pengembaraan jiwanya.
 
-Pembakaran *Bade* (menara pengusung jenazah) dan *Lembu* (sarkofagus) adalah simbolis pemutusan ikatan duniawi. Dengan hancurnya raga fisik, sang *Atman* akhirnya terbebas dari sangkar dunianya untuk melanjutkan perjalanan menuju *Moksa* (bersatu dengan Tuhan) atau mempersiapkan reinkarnasi baru (Samsara).
-
-*Apakah kamu melihat bagaimana elemen air dan api selalu hadir seimbang dalam upacara kematian di Nusantara? Menurutmu, pelajaran apa yang bisa kita ambil tentang batas antara kehidupan dan kematian?*`
+Berbeda dengan tradisi penguburan di tanah, Ngaben menekankan pada kecepatan pelepasan. Dengan hancurnya raga oleh api, ikatan emosional terhadap ego fisik juga ikut hangus, menyisakan jiwa yang murni untuk naik menuju kedamaian abadi.`
   },
   {
-    keywords: ["itinerary", "jawa", "bali", "hari", "perjalanan"],
-    response: `Saya menangkap keinginanmu untuk merajut benang merah antara dua pusat peradaban Nusantara: **Jawa dan Bali**. Berikut adalah narasi perjalanan 7-hari yang menghubungkan sejarah Mataram Kuno hingga lahirnya Bali Aga.
+    keywords: ["saman", "aceh", "gayo", "sinkron", "musik"],
+    response: `Keajaiban Tari Saman dari Suku Gayo terletak pada ketiadaan instrumen musik eksternal; alat musik utamanya adalah resonansi tubuh dan suara para penarinya sendiri. Sinkronisasi yang terlihat mustahil itu tidak lahir dari instruksi konduktor, melainkan dari **latihan komunal yang intens sejak kanak-kanak**.
 
-**Hari 1-2: Episentrum Spiritualitas Jawa (Yogyakarta & Magelang)**
-Kita mulai dari keheningan Kabut Magelang. Di kala fajar, Anda berdiri di **Candi Borobudur** (Puncak Mahayana), sebelum menyusuri poros imajiner menuju **Candi Prambanan** (Kejayaan Siwa). Malamnya, resapi sendratari Ramayana berlatar candi yang menyala, memahami tarian sebagai wujud penyatuan mikrokosmos dan makrokosmos orang Jawa.
+Para penari Saman duduk dalam barisan rapat (*saf*), di mana bahu mereka bersentuhan. Sentuhan fisik ini menjadi "sensor" alami; mereka bisa merasakan getaran dan gerakan kawan di sampingnya bahkan tanpa menoleh. Hitungan diatur oleh *Syekh* (pemimpin) melalui intonasi syair, sementara para penari memiliki "jam internal" yang telah terkalibrasi melalui ribuan jam latihan bersama.
 
-**Hari 3: Transisi Api & Belerang (Bromo)**
-Meninggalkan pusaran kerajaan Ttengah, kita menuju Jawa Timur ke Kawah **Gunung Bromo**. Di sinilah Anda bertemu dengan Suku Tengger. Kawah Bromo bukan sekadar gunung berapi, melainkan dapur kosmis tempat ritual Kasada bersandar—mempersembahkan rasa syukur ke jantung bumi.
+Secara budaya, Saman adalah media dakwah Islam. Liriknya berisi puji-pujian kepada Allah, nasihat moral, dan sejarah pahlawan Gayo. Setiap tepukan pada dada dan paha melambangkan kekompakan dan kepasrahan kepada Tuhan.
 
-**Hari 4-5: Gerbang Karang ke Pulau Dewata (Banyuwangi & Bali Barat)**
-Dari hutan magis *Alas Purwo* dan tarian Gandrung, selat Bali diseberangi bukan hanya secara fisik, tapi juga secara kronologis. Anda memasuki **Taman Nasional Bali Barat** dan Pulau Menjangan, merasakan Bali purba sebelum masifnya pariwisata.
-
-**Hari 6-7: Tirta dan Harmoni Tridatu (Ubud & Tampaksiring)**
-Perjalanan spiritual memuncak di jantung budaya Bali, Ubud. Lakukan *Melukat* (pembersihan aura) di mata air suci **Tirta Empul**. Rasakan bagaimana air (*Tirta*) di Bali bukan sekadar H2O, melainkan medium penyembuhan jiwa yang mengalirkan filosofi *Tri Hita Karana*—keseimbangan manusia dengan sesama, alam, dan Tuhan.
-
-*Perjalanan ini bergerak dari "Batu Emas" (Candi) ke "Air Suci" (Tirta). Apa yang paling kamu minati: Arsitektur sakral atau ritual penyembuhan spiritual?*`
+Inilah mengapa UNESCO menetapkannya sebagai Warisan Budaya Takbenda. Saman membuktikan bahwa harmoni tingkat tinggi dapat dicapai ketika ego individu dilebur sepenuhnya ke dalam gerak kolektif yang searah. Sebuah tarian yang bukan hanya visual, tapi juga auditif dan spiritual.`
   },
   {
-    keywords: ["rendang", "kuliner", "makanan", "padang", "marandang"],
-    response: `Banyak yang mengenal Rendang hanya sebagai "makanan terenak di dunia", namun sedikit yang memahami bahwa proses pembuatannya, **Marandang**, adalah sekolah kesabaran tertinggi bagi perempuan Minangkabau.
+    keywords: ["itinerary", "jawa", "bali", "7 hari", "budaya"],
+    response: `Berikut adalah rencana perjalanan 7 hari "Nusantara Heritage" yang saya rancang khusus untuk menelusuri jejak peradaban besar di Jawa dan Bali:
 
-Dalam tradisi Minangkabau yang menganut sistem matrilineal, Rendang memiliki makna filosofis *Musyawarah dan Mufakat* yang tersimbolkan dalam empat bahan pokoknya:
-1. **Dagiang (Daging Sapi):** Melambangkan "Niniak Mamak" (para pemimpin suku adat).
-2. **Kambia (Kelapa):** Melambangkan "Cadiak Pandai" (kaum intelektual).
-3. **Lado (Cabai):** Melambangkan "Alim Ulama" (ketegasan pemuka agama).
-4. **Pemasak (Bumbu-bumbu):** Melambangkan kebijaksanaan setiap elemen masyarakat yang melebur menjadi satu kerukunan budaya.
+**Hari 1-2: Poros Mataram Kuno (Yogyakarta & Magelang)**
+- **Fajar:** Menyaksikan matahari terbit di Borobudur, meresapi keheningan Mandala Buddha.
+- **Siang:** Workshop Batik di desa sekitar Magelang.
+- **Malam:** Menonton Sendratari Ramayana di pelataran Candi Prambanan yang megah.
 
-Namun filosofi utamanya ada pada **Waktu & Apinya**. Memasak rendang asli membutuhkan waktu 7 hingga 8 jam dengan nyala api kayu bakar yang sangat stabil. Terlalu besar, ia akan gosong dan pahit. Terlalu kecil, ia takkan mengering dan hancur. Mengaduknya (*mengkacau*) tanpa henti mengajarkan filosofi Minang: **"Alon-alon, tak pandang lelah demi hasil yang tahan lama."** 
+**Hari 3: Jantung Kesultanan (Yogyakarta)**
+- Eksplorasi Keraton Yogyakarta dan Taman Sari saat pagi.
+- Belajar filosofi keris atau gamelan di sanggar lokal.
+- Malamnya, mencicipi Gudeg di sekitar Alun-alun Selatan.
 
-Rendang sejatinya diawetkan oleh rempah, bukan secara kimiawi. Ia diciptakan sebagai bekal logistik bagi pemuda Minang kuno di saat mereka harus pergi *Merantau* berbulan-bulan menembus lautan ke daratan asing.
+**Hari 4: Menyeberang ke Timur**
+- Perjalanan darat menuju Pelabuhan Ketapang, melihat transisi lanskap dari Jawa Tengah ke Jawa Timur. 
+- Beristirahat di hotel sekitar Banyuwangi.
 
-*Menarik bukan? Menurutmu, apakah seni "slow-cooking" seperti membuat rendang bisa dianggap sebagai meditasi aktif?*`
+**Hari 5: Memasuki Pulau Dewata (Bali Barat)**
+- Menyeberang ke Gilimanuk, lanjut menuju Pura Pulaki yang menghadap laut.
+- Menuju Ubud, pusat gravitasi seni Bali. 
+
+**Hari 6: Spiritualitas Tinggi (Tampaksiring & Besakih)**
+- Ritual pembersihan diri (*Melukat*) di air suci Tirta Empul.
+- Mendaki menuju Pura Besakih, "Pura Ibu" di lereng Gunung Agung.
+
+**Hari 7: Akhir yang Puitis (Tanah Lot)**
+- Mengunjungi galeri seni di Ubud untuk memahami lukisan gaya klasik Bali.
+- Menutup perjalanan dengan pemandangan matahari terbenam di Tanah Lot, simbol kemegahan Hindu yang berdiri kokoh di atas batu karang samudera.`
   },
   {
-    keywords: ["saman", "tari", "aceh", "gayo"],
-    response: `Tarian Saman dari Suku Gayo, Aceh, adalah satu dari sedikit kesenian di dunia yang diakui UNESCO sebagai Warisan Budaya Takbenda di mana alat musik utamanya adalah **tubuh para penarinya sendiri**.
+    keywords: ["indonesia", "unik", "unik", "asia", "gotong royong", "filosofi"],
+    response: `Yang membedakan budaya Indonesia dari negara Asia lainnya adalah kemampuan luar biasa kita dalam melakukan **Sinkretisme Budaya**—kemampuan memadukan berbagai elemen yang berbeda menjadi satu harmoni baru yang kohesif.
 
-Fokus utama Saman bukanlah kelenturan individual, melainkan presisi **sinkronisasi tingkat dewa**. Saat belasan penari Saman duduk dalam satu saf yang merapat, bahu mereka saling bersentuhan. Ini memproyeksikan pondasi sosial Islam di Aceh: *Saf dalam shalat*, yang menyatukan semua orang tanpa memandang kasta atau status kekayaan.
+1. **Sinkretisme Tanpa Gejolak:** Indonesia adalah tempat di mana sisa-sisa Hinduisme abad ke-8, Buddhisme, tradisi animisme lokal, dan ajaran Islam/Kristen hidup berdampingan dalam arsitektur, bahasa, dan ritual sehari-hari. Kita tidak membuang yang lama, kita merangkulnya ke dalam yang baru.
+2. **Filosofi Gotong Royong:** Ini bukan sekadar kerja bakti. Ini adalah sistem operasi sosial yang unik yang membedakan kita dari budaya Asia yang lebih hierarkis. Gotong royong menyatakan bahwa beban berat harus dipikul bersama demi keharmonisan kosmis desa.
+3. **Budaya Maritim vs Agrikultur:** Berbeda dengan China atau India yang berbasis daratan luas, budaya kita adalah budaya kepulauan (*Archipelagic Culture*). Ini menciptakan mentalitas yang terbuka, dinamis, dan terbiasa dengan pertukaran global namun tetap memiliki akar komunal yang sangat kuat.
+4. **Bhinneka Tunggal Ika:** Jarang ada negara dengan 300+ kelompok etnis yang sepakat pada satu identitas nasional. Ini adalah eksperimen sosial tersukses di dunia, di mana keberagaman bukanlah beban, melainkan aset utama.
 
-Gerak menepuk dada, paha, dan tangan dalam ritme yang terus meningkat (*Grep, Kirep, Lingang, Surang-Saring*) dimainkan bersama syair berbahasa Gayo dan Arab yang dilantunkan sang *Syekh* (pemimpin tarian). 
-
-Harmoni yang menggelegar dari Saman memuat pesan filosofis mendalam: **Ego individu harus dilebur ke dalam ritme komunal.** Jika satu orang melakukan kesalahan 0.1 detik saja, seluruh gelombang tarian akan runtuh. Saman mengajarkan bahwa kekuatan masyarakat terletak pada kekompakan yang tanpa pamrih.
-
-*Pernahkah kamu menyadari bagaimana tepukan tangan manusia ke tubuhnya sendiri dapat menghasilkan harmoni yang lebih memukau daripada instrumen musik yang mahal?*`
+Secara filosofis, orang Indonesia cenderung mencari jalan tengah (*Lumbung*) dan menghindari ekstremitas. Inilah "jiwa" yang membuat Indonesia selalu terasa hangat dan inklusif bagi siapa pun yang berkunjung.`
   }
 ];
 

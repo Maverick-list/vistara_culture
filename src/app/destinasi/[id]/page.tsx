@@ -73,27 +73,27 @@ export default function DestinasiPage({ params }: DestinasiPageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
-    name: dest.nama,
-    description: dest.deskripsi_singkat,
-    image: dest.foto_url,
-    publicAccess: true,
-    geo: {
+    "name": dest.nama,
+    "description": dest.konteks_budaya,
+    "image": dest.foto_url,
+    "geo": {
       "@type": "GeoCoordinates",
-      latitude: dest.koordinat.lat,
-      longitude: dest.koordinat.lng,
+      "latitude": dest.koordinat.lat,
+      "longitude": dest.koordinat.lng,
     },
-    address: {
+    "address": {
       "@type": "PostalAddress",
-      addressLocality: dest.lokasi,
-      addressRegion: dest.provinsi,
-      addressCountry: "ID",
+      "addressLocality": dest.lokasi,
+      "addressRegion": dest.provinsi,
+      "addressCountry": "ID"
     },
-    aggregateRating: {
+    "touristType": dest.kategori,
+    "aggregateRating": {
       "@type": "AggregateRating",
-      ratingValue: dest.rating,
-      bestRating: "5",
-      ratingCount: "128", // Dummy default
-    },
+      "ratingValue": dest.rating,
+      "bestRating": "5",
+      "ratingCount": "150"
+    }
   };
 
   return (

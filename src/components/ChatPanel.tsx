@@ -107,10 +107,12 @@ export default function ChatPanel({
         ];
       default:
         return [
-          "Apa sejarah tempat ini?", 
-          "Ceritakan keunikan budayanya.", 
-          "Aktivitas yang direkomendasikan?", 
-          "Apakah ada pantangan khusus?"
+          "Apa destinasi budaya tersembunyi di Indonesia?",
+          "Jelajahi filosofi batik Jawa",
+          "Ritual adat apa yang hampir punah?",
+          "Bedanya budaya Jawa dan Sunda?",
+          "Tempat budaya terbaik untuk keluarga?",
+          "Bagaimana cara menghormati adat lokal?",
         ];
     }
   };
@@ -139,7 +141,7 @@ export default function ChatPanel({
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0.5 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="absolute right-0 top-0 bottom-0 z-50 flex w-full flex-col bg-white shadow-2xl shadow-black/30 sm:w-[400px] md:rounded-r-2xl border-l border-amber-200/50"
+            className="absolute right-0 top-0 bottom-0 z-50 flex w-full flex-col bg-white shadow-2xl shadow-black/30 sm:w-[400px] md:h-full md:rounded-r-2xl border-l border-amber-200/50 overflow-hidden h-[100dvh]"
           >
             {/* ── Header ── */}
             <header className="flex items-center justify-between border-b border-amber-100 bg-gradient-to-r from-emerald-700 to-emerald-900 px-5 py-4 text-white">

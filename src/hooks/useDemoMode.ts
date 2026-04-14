@@ -30,8 +30,6 @@ export function useDemoMode() {
   const getDemoResponseText = (userMessage: string): string => {
     const lowerMsg = userMessage.toLowerCase();
 
-    // Find first conversation where ALL keywords in the conversation's required keywords match something in the message
-    // Actually, simple OR fuzzy matching is better:
     let bestMatch = null;
     let maxMatchedKeywords = 0;
 
@@ -49,21 +47,33 @@ export function useDemoMode() {
 
   /**
    * Creates an artificial Async Generator that yields text chunks
-   * simulating an LLM streaming response with 20ms delays.
+   * simulating an LLM streaming response with natural sentence pacing.
    */
   async function* simulateSimulatedStream(userMessage: string) {
     const fullText = getDemoResponseText(userMessage);
-    const chunkSize = 4; // characters per tick
     
-    // Initial artificial thinking delay
+    // 1. Initial artificial thinking delay (800ms)
+    // The UI should show the typing indicator during this time
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    for (let i = 0; i < fullText.length; i += chunkSize) {
-      const chunk = fullText.slice(i, i + chunkSize);
-      yield chunk;
-      // Randomize delay slightly to look organic
-      const delay = Math.floor(Math.random() * 20) + 10;
-      await new Promise((resolve) => setTimeout(resolve, delay));
+    // 2. Split text into "chunks" or sentences for more natural flow
+    // We split by punctuation followed by a space
+    const chunks = fullText.split(/(?<=[.!?])\s+/);
+
+    for (const chunk of chunks) {
+      const sentence = chunk + " ";
+      
+      // Yield characters within each sentence with variable speed
+      for (let i = 0; i < sentence.length; i++) {
+        yield sentence[i];
+        
+        // Randomize typing speed: 25-40ms (non-robotic)
+        const delay = Math.floor(Math.random() * 15) + 25;
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+      
+      // Small breath after each sentence (100-200ms)
+      await new Promise((resolve) => setTimeout(resolve, Math.random() * 100 + 100));
     }
   }
 

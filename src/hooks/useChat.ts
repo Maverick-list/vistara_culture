@@ -125,23 +125,26 @@ export function useChat(): UseChatReturn {
       setMessages(updatedMessages);
       setIsLoading(true);
 
-      const aiMsgId = generateId();
-      
-      // Inject an empty AI bubble that we will populate via stream (pastikan limit 10 juga)
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: aiMsgId,
-          role: "assistant",
-          content: "",
-          timestamp: Date.now(),
-        },
-      ].slice(-10));
-
       try {
+        const aiMsgId = generateId();
+
         if (isDemoMode) {
           try {
+            let bubbleAdded = false;
             for await (const chunk of simulateSimulatedStream(text.trim())) {
+              if (!bubbleAdded) {
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    id: aiMsgId,
+                    role: "assistant",
+                    content: "",
+                    timestamp: Date.now(),
+                  },
+                ].slice(-10));
+                bubbleAdded = true;
+              }
+
               setMessages((prev) =>
                 prev.map((m) =>
                   m.id === aiMsgId ? { ...m, content: m.content + chunk } : m
@@ -153,6 +156,17 @@ export function useChat(): UseChatReturn {
           }
           return;
         }
+
+        // Logic for real API
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: aiMsgId,
+            role: "assistant",
+            content: "",
+            timestamp: Date.now(),
+          },
+        ].slice(-10));
 
         // Mulai perbaikan fetch / streaming di `useChat.ts` (Sesuai tugas)
         const res = await fetch("/api/chat", {

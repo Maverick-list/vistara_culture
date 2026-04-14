@@ -196,17 +196,6 @@ function HomeContent({ destinations }: HomeClientProps) {
         </div>
       </main>
 
-      {/* ── Footer ───────────────────────────────────────────────── */}
-      <footer className="border-t border-amber-200 bg-amber-100/50 px-6 py-8">
-        <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-center text-sm text-amber-700/60">
-          <p>
-            © 2026 NusantaraGuide AI — Memperkenalkan kekayaan budaya Indonesia
-            kepada dunia.
-          </p>
-          <AzureBadge />
-        </div>
-      </footer>
-
       <DestinationModal
         destination={selectedDestination}
         isOpen={isModalOpen}

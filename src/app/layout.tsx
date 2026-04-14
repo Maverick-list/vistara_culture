@@ -5,6 +5,7 @@ import "./globals.css";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import DemoBanner from "@/components/DemoBanner";
 import OnboardingOverlay from "@/components/OnboardingOverlay";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,36 +28,53 @@ export const viewport: Viewport = {
 
 const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 60,40 90,50 60,60 50,90 40,60 10,50 40,40" fill="%23d97706"/><circle cx="50" cy="50" r="15" fill="%23fef3c7"/></svg>`;
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://vistara-culture.azurewebsites.net";
+
 export const metadata: Metadata = {
-  title: "NusantaraGuide AI — Jelajahi Jiwa Budaya Nusantara",
+  title: {
+    default: "Vistara — Jelajahi Jiwa Budaya Nusantara",
+    template: "%s | Vistara — Jelajahi Jiwa Budaya Nusantara",
+  },
   description:
-    "Temukan destinasi wisata budaya terbaik di seluruh Nusantara. Dari candi megah hingga desa adat tersembunyi, lengkap dengan konteks sejarah dan kearifan lokal.",
+    "Platform AI wisata budaya Indonesia. Temukan makna mendalam di balik setiap destinasi — candi, ritual, seni, dan kearifan lokal — dengan panduan AI yang berpengetahuan luas.",
   keywords: [
     "wisata budaya Indonesia",
+    "cultural tourism AI",
+    "heritage Indonesia",
     "destinasi Nusantara",
-    "candi",
-    "desa adat",
-    "cultural tourism",
+    "kearifan lokal",
+    "Azure AI",
+    "Vistara Culture",
   ],
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: `data:image/svg+xml;utf8,${encodeURIComponent(svgIcon)}`,
   },
   openGraph: {
-    title: "NusantaraGuide AI — Jelajahi Jiwa Budaya Nusantara",
+    title: "Vistara — Jelajahi Jiwa Budaya Nusantara",
     description:
-      "Temukan destinasi wisata budaya terbaik di seluruh Nusantara. Dari candi megah hingga desa adat tersembunyi, lengkap dengan konteks sejarah dan kearifan lokal.",
-    url: "https://nusantaraguide.id",
-    siteName: "NusantaraGuide AI",
+      "Temukan makna mendalam di balik destinasi budaya Indonesia dengan panduan AI. Platform eksplorasi warisan sejarah, seni, dan ritual Nusantara.",
+    url: SITE_URL,
+    siteName: "Vistara Culture",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=1200&h=630&fit=crop",
+        url: "/og-image.jpg", // Assume generic image exists or use a high-res Unsplash as fallback
         width: 1200,
         height: 630,
-        alt: "Candi Borobudur saat matahari terbit",
+        alt: "Vistara — Cultural Intelligence Tourism Platform",
       },
     ],
     locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vistara — Jelajahi Jiwa Budaya Nusantara",
+    description: "Nikmati perjalanan budaya Indonesia yang lebih bermakna dengan dukungan AI.",
+    images: ["/og-image.jpg"],
   },
   manifest: "/manifest.json",
 };
@@ -76,6 +94,7 @@ export default function RootLayout({
           <DemoBanner />
           <OnboardingOverlay />
           {children}
+          <Footer />
         </ErrorBoundary>
       </body>
     </html>
