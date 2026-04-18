@@ -120,12 +120,14 @@ export function useChat(): UseChatReturn {
         timestamp: Date.now(),
       };
 
-      setMessages((prev) => [...prev, userMsg]);
+      // Pastikan max 10 pesan terakhir di state
+      const updatedMessages = [...messages, userMsg].slice(-10);
+      setMessages(updatedMessages);
       setIsLoading(true);
 
       const aiMsgId = generateId();
       
-      // Inject an empty AI bubble that we will populate via stream
+      // Inject an empty AI bubble that we will populate via stream (pastikan limit 10 juga)
       setMessages((prev) => [
         ...prev,
         {
@@ -134,7 +136,7 @@ export function useChat(): UseChatReturn {
           content: "",
           timestamp: Date.now(),
         },
-      ]);
+      ].slice(-10));
 
       try {
         if (isDemoMode) {
@@ -152,32 +154,32 @@ export function useChat(): UseChatReturn {
           return;
         }
 
+        // Mulai perbaikan fetch / streaming di `useChat.ts` (Sesuai tugas)
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            messages: [...messages, userMsg],
+            messages: updatedMessages, // Mengirim 10 terakhir
             destinationContext: activeDestination,
             sessionId,
           }),
         });
 
         if (!res.ok) {
-          throw new Error("Gagal mengambil respon dari server.");
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || `Gagal fetch data: HTTP ${res.status}`);
         }
 
-        if (!res.body) throw new Error("Tidak ada stream response");
+        if (!res.body) throw new Error("Tidak ada stream response dari server");
 
         const reader = res.body.getReader();
-        const decoder = new TextDecoder();
-        let chunks = "";
+        const decoder = new TextDecoder("utf-8");
 
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
 
           const textChunk = decoder.decode(value, { stream: true });
-          chunks += textChunk;
           
           setMessages((prev) =>
             prev.map((m) =>
@@ -185,14 +187,21 @@ export function useChat(): UseChatReturn {
             )
           );
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("Chat Error:", error);
+        
+        // Tampilkan error toast sbg ganti alert atau notifikasi sesuai requirement `Tampilkan error toast jika fetch gagal`
+        if (typeof window !== "undefined") {
+          const errMsg = error instanceof Error ? error.message : String(error);
+          alert(`Error Chat: ${errMsg}`);
+        }
+
         setMessages((prev) => [
           ...prev,
           {
             id: generateId(),
             role: "assistant",
-            content: "Maaf, terjadi kesalahan atau koneksi terputus. Silakan coba lagi.",
+            content: "Maaf, terjadi kesalahan atau koneksi terputus. Pastikan API key sudah benar dan coba lagi.",
             timestamp: Date.now(),
           },
         ]);

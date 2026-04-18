@@ -52,7 +52,9 @@ Ikuti langkah-langkah mudah di bawah ini untuk menjalankan NusantaraGuide AI di 
 3. **Konfigurasi Environment Variables**
    Salin `.env.example` ke `.env` (jika ada) atau buat file `.env` di *root* dan isi:
    \`\`\`env
-   AZURE_OPENAI_KEY="API_KEY_ANDA"
+   AZURE_LANGUAGE_KEY="KUNCI_AZURE_KEY"
+   AZURE_LANGUAGE_ENDPOINT="ENDPOINT_AZURE"
+   GEMINI_API_KEY="KUNCI_GEMINI"
    NEXT_PUBLIC_SITE_URL="http://localhost:3000"
    \`\`\`
 

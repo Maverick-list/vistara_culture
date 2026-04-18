@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Sparkles, User, Bot, Trash2 } from "lucide-react";
 import type { Destination } from "@/data/destinations";
 import { useChat, type ChatMessage } from "@/hooks/useChat";
-import { SUGGESTED_QUESTIONS } from "@/lib/suggested-questions";
 import AzureBadge from "@/components/AzureBadge";
 
 // ── Props ────────────────────────────────────────────────────────────────
@@ -74,7 +73,49 @@ export default function ChatPanel({
     sendMessage(qs);
   };
 
-  const suggestedQs = destination ? SUGGESTED_QUESTIONS[destination.kategori] || [] : [];
+  const getSuggestedQs = (category?: string) => {
+    switch (category) {
+      case "Candi & Pura":
+      case "Situs Sejarah":
+        return [
+          "Apa filosofi arsitektur ini?", 
+          "Ritual apa yang masih aktif?", 
+          "Kapan waktu terbaik kunjungi?", 
+          "Apa hubungannya dengan kerajaan lokal?"
+        ];
+      case "Upacara & Tradisi":
+        return [
+          "Apa makna simbolis upacara ini?", 
+          "Siapa yang boleh hadir?", 
+          "Berapa lama ritual berlangsung?", 
+          "Bagaimana cara menghormati prosesi?"
+        ];
+      case "Desa Budaya":
+      case "Kuliner Heritage": // Disesuaikan ke Seni/Pertunjukan/Budaya
+        return [
+          "Apa pesan moral di balik pertunjukan ini?", 
+          "Berapa lama berlatih untuk jadi penari?", 
+          "Di mana bisa belajar kesenian ini?", 
+          "Apa bedanya versi sakral dan profan?"
+        ];
+      case "Alam & Lanskap":
+        return [
+          "Apa kearifan lokal menjaga ekosistem ini?", 
+          "Suku apa yang mendiami kawasan ini?", 
+          "Apa pantangan yang harus dipatuhi wisatawan?", 
+          "Bagaimana perubahan iklim mempengaruhi tempat ini?"
+        ];
+      default:
+        return [
+          "Apa sejarah tempat ini?", 
+          "Ceritakan keunikan budayanya.", 
+          "Aktivitas yang direkomendasikan?", 
+          "Apakah ada pantangan khusus?"
+        ];
+    }
+  };
+
+  const suggestedQs = getSuggestedQs(destination?.kategori);
 
   return (
     <AnimatePresence>
@@ -118,7 +159,11 @@ export default function ChatPanel({
               <div className="flex items-center gap-1">
                 {messages.length > 0 && (
                   <button
-                    onClick={clearChat}
+                    onClick={() => {
+                      if (window.confirm("Mulai percakapan baru?")) {
+                        clearChat();
+                      }
+                    }}
                     className="flex h-8 w-8 items-center justify-center rounded-full text-emerald-200 transition-colors hover:bg-white/10 hover:text-white"
                     title="Hapus percakapan"
                   >

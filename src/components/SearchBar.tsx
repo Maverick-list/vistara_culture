@@ -36,7 +36,7 @@ export default function SearchBar({
     keyPhrases,
     detectedLanguage,
     isoCode,
-    analyzeSearchQuery,
+    analyzeQuery,
     clearAnalysis,
   } = useAzureLanguage();
 
@@ -66,7 +66,7 @@ export default function SearchBar({
     const newValue = e.target.value;
     setValue(newValue);
     debouncedSearch(newValue);
-    analyzeSearchQuery(newValue);
+    analyzeQuery(newValue);
   };
 
   const handleClear = () => {
@@ -80,7 +80,7 @@ export default function SearchBar({
     const newVal = value ? `${value} ${phrase}` : phrase;
     setValue(newVal);
     debouncedSearch(newVal);
-    analyzeSearchQuery(newVal);
+    analyzeQuery(newVal);
   };
 
   // ── Variant styles ───────────────────────────────────────────────────

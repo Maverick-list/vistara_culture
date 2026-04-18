@@ -2,24 +2,16 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 
-export interface UseAzureLanguageReturn {
-  isAnalyzing: boolean;
-  keyPhrases: string[];
-  detectedLanguage: string | null;
-  isoCode: string | null;
-  analyzeSearchQuery: (query: string) => void;
-  clearAnalysis: () => void;
-}
+// Mem-cache hasil analisis Azure agar tidak spam API untuk query yang sama persis (Map sederhana)
+const analysisCache = new Map<string, { keyPhrases: string[]; detectedLanguage: string | null; isoCode: string | null }>();
 
-export function useAzureLanguage(): UseAzureLanguageReturn {
+export function useAzureLanguage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [keyPhrases, setKeyPhrases] = useState<string[]>([]);
   const [detectedLanguage, setDetectedLanguage] = useState<string | null>(null);
   const [isoCode, setIsoCode] = useState<string | null>(null);
-  
+
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
-  // Keep track of the active request to ignore stale responses
   const requestCounter = useRef(0);
 
   const clearAnalysis = useCallback(() => {
@@ -31,30 +23,35 @@ export function useAzureLanguage(): UseAzureLanguageReturn {
     requestCounter.current += 1;
   }, []);
 
-  const analyzeSearchQuery = useCallback((query: string) => {
-    // Clear existing timeout
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
+  const analyzeQuery = useCallback((query: string) => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
 
     const trimmed = query.trim();
-    if (!trimmed) {
+    if (!trimmed || trimmed.length < 3) {
       clearAnalysis();
       return;
     }
 
-    // Debounce for 500ms
+    // Jika sudah ada di cache, gunakan data tersimpan
+    if (analysisCache.has(trimmed)) {
+      const cached = analysisCache.get(trimmed)!;
+      setKeyPhrases(cached.keyPhrases);
+      setDetectedLanguage(cached.detectedLanguage);
+      setIsoCode(cached.isoCode);
+      return;
+    }
+
+    // Debounce tepat 600ms
     debounceRef.current = setTimeout(async () => {
       const currentReqId = ++requestCounter.current;
       setIsAnalyzing(true);
-      
+
       try {
-        // Run both analyze endpoints concurrently
-        const [searchRes, langRes] = await Promise.all([
+        const [phrasesRes, langRes] = await Promise.all([
           fetch("/api/analyze", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: trimmed, type: "search" }),
+            body: JSON.stringify({ text: trimmed, type: "keyphrases" }),
           }),
           fetch("/api/analyze", {
             method: "POST",
@@ -63,43 +60,35 @@ export function useAzureLanguage(): UseAzureLanguageReturn {
           }),
         ]);
 
-        // If a new request was fired while we were fetching, discard this one
         if (currentReqId !== requestCounter.current) return;
 
-        let newPhrases: string[] = [];
-        let newLang: string | null = null;
-        let newIso: string | null = null;
+        const phrasesData = await phrasesRes.json();
+        const langData = await langRes.json();
 
-        if (searchRes.ok) {
-          const searchData = await searchRes.json();
-          if (searchData.keyPhrases) {
-            newPhrases = searchData.keyPhrases;
-          }
-        }
+        const fetchedPhrases = phrasesData.keyPhrases || [];
+        const fetchedLang = langData.language || "id";
+        const fetchedIso = langData.isoCode || "id";
 
-        if (langRes.ok) {
-          const langData = await langRes.json();
-          if (langData.language) {
-            newLang = langData.language;
-            newIso = langData.isoCode;
-          }
-        }
+        // Simpan ke Cache
+        analysisCache.set(trimmed, { 
+          keyPhrases: fetchedPhrases, 
+          detectedLanguage: fetchedLang,
+          isoCode: fetchedIso 
+        });
 
-        setKeyPhrases(newPhrases);
-        setDetectedLanguage(newLang);
-        setIsoCode(newIso);
-
+        setKeyPhrases(fetchedPhrases);
+        setDetectedLanguage(fetchedLang);
+        setIsoCode(fetchedIso);
       } catch (error) {
-        console.error("Azure Analysis Hook Error:", error);
+        console.error("Azure Hook Error:", error);
       } finally {
         if (currentReqId === requestCounter.current) {
           setIsAnalyzing(false);
         }
       }
-    }, 500);
+    }, 600); // 600ms debounce as requested
   }, [clearAnalysis]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -111,7 +100,7 @@ export function useAzureLanguage(): UseAzureLanguageReturn {
     keyPhrases,
     detectedLanguage,
     isoCode,
-    analyzeSearchQuery,
+    analyzeQuery, // diganti dari analyzeSearchQuery sesuai prompt user
     clearAnalysis,
   };
 }

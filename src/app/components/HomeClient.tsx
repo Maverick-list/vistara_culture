@@ -213,7 +213,7 @@ function HomeContent({ destinations }: HomeClientProps) {
         onClose={closeModal}
         onNavigate={navigateModal}
       />
-      
+
       {/* ── Floating Fab & Panel ─────────────────────────────────── */}
       <ItineraryPanel />
     </>
