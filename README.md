@@ -1,70 +1,53 @@
-# Vistara — Cultural Intelligence Tourism Platform 🌿✨
+Vistara Culture 🏛️✨
 
-> **"Dari sekadar destinasi, menjadi pengalaman jiwa."**
->
-> Pemenang tantangan **Dicoding Hackathon** — *Tema No. 23: Digitalisasi Pariwisata*.
+Jelajahi Kekayaan Budaya Nusantara Melalui Eksplorasi Digital Interaktif.
 
-![Deploy to Azure](https://img.shields.io/badge/Deploy_to-Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) 
+Proyek yang diajukan untuk Kompetisi Web Development I/O Festival 2026 oleh Mavezen Team.
 
-Vistara adalah platform *Smart Tourism* masa depan yang mengubah cara kita berwisata di Indonesia. Menggunakan kecerdasan buatan dari Microsoft Azure, Vistara menceritakan makna mendalam di balik setiap relief candi, ritual adat, dan kearifan lokal yang sering kali luput dari pandangan wisatawan biasa.
+Vistara Culture mengubah interaksi pembelajaran budaya pasif menjadi eksplorasi visual yang interaktif. Dibangun dengan teknologi modern web development, web app ini dirancang untuk menjadi jembatan antara budaya lokal dan generasi masa kini. Tidak sekadar menjadi ensiklopedia teks biasa; platform ini membawamu menyelami galeri digital sejarah, kesenian, dan kearifan lokal dengan transisi visual yang estetis dan imersif.
 
-🌍 **Live Demo:** [https://vistara-culture.azurewebsites.net](https://vistara-culture.azurewebsites.net)  
-📖 **Proposal Final:** [PROPOSAL_DRAFT.md](./PROPOSAL_DRAFT.md)
+📖 Repository: https://github.com/Maverick-list/vistara_culture
 
----
+🎯 Mengapa Vistara Culture? (Dampak Sosial)
+Mendekatkan Milenial/Gen-Z pada Sejarah: Lewat antarmuka eksplorasi visual yang dinamis, modern, dan tidak membosankan.
 
-## 🚀 Kriteria Kompetisi (Highlight)
+Pelestarian Digital (Cultural Preservation): Mendokumentasikan ragam budaya Indonesia (tarian, musik, pakaian adat) yang tervalidasi agar dapat diakses kapan saja dan di mana saja.
 
-### 🧩 Inovasi: Intelligence over Information
-Berbeda dengan aplikasi direktori travel biasa, Vistara tidak hanya menampilkan data statis. Vistara menggunakan **Contextual AI Assistant** yang mampu melakukan dialog mendalam tentang filosofi dan sejarah peninggalan Nusantara layaknya seorang sejarawan ahli yang mendampingi perjalanan Anda.
+Meningkatkan Kesadaran Identitas Bangsa: Menghadirkan ekosistem web terpusat yang meningkatkan engagement kaum muda terhadap warisan lokal di tengah gempuran konten global.
 
-### ☁️ Integrasi Azure
-Kami memanfaatkan ekosistem Microsoft untuk performa skala global:
-- **Azure Static Web Apps**: Deployment aplikasi Next.js 14 yang super cepat dan handal.
-- **Azure AI Language**: Fitur analisis teks dan pemahaman bahasa untuk asisten budaya.
-- **Azure Search & Schema**: Integrasi JSON-LD TouristAttraction untuk optimasi SEO kelas dunia.
+🚀 Fitur Utama
+Interactive Culture Gallery: Direktori budaya interaktif layaknya museum digital yang bisa diakses langsung melalui peramban.
 
-### 📈 Dampak Nyata
-Vistara mengatasi kesenjangan antara "pariwisata massal" dan "literasi budaya", membantu melestarikan narasi luhur Indonesia kepada generasi Gen-Z dan wisatawan internasional.
+Responsive Design & Fast Routing: Rute perpindahan antarkonten terasa instan dan optimal di segala perangkat (mobile, tablet, desktop).
 
----
+Information Hub: Dokumentasi sejarah dan nilai filosofis budaya yang disusun secara terstruktur dengan cognitive load yang rendah.
 
-## ✨ Fitur Unggulan
-- **AI Cultural Expert Chat**: Ngobrol mendalam tentang filosofi tempat wisata secara real-time.
-- **Smart Itinerary Builder**: Timeline jalan-jalan intuitif dengan fitur *Drag-and-Drop*.
-- **Deep Cultural Context**: Database 12+ destinasi utama dengan narasi sejarah yang telah dikurasi.
-- **Presentation Mode**: Akses simulasi AI instan (`?demo=true`) untuk keperluan presentasi tanpa API Key.
+Modern UI/UX Experience: Dirancang dengan transisi yang halus layaknya aplikasi native dengan estetika visual terkini.
 
----
+💻 Tech Stack
+Frontend Core: Next.js 14 (App Router) + React + TypeScript
 
-## 💻 Tech Stack
-- **Framework**: Next.js 14 (App Router, Standalone Mode)
-- **Styling**: Vanilla Tailwind CSS + Framer Motion (Premium Animations)
-- **Data Flow**: Context API + Custom Hooks
-- **Cloud**: Azure Static Web Apps + GitHub Actions CI/CD
+Styling & UX: Tailwind CSS + Framer Motion (untuk animasi smooth)
 
----
+Data Handling: Zustand (via custom React Context/Store) untuk performa state yang optimal.
 
-## 🛠 Panduan Jalankan Lokal
+Infrastruktur & Cloud: Vercel CI/CD Deployment.
 
-1. **Clone & Install**
-   ```bash
-   git clone https://github.com/Maverick-list/vistara_culture.git
-   cd vistara_culture
-   npm install
-   ```
+🛠 Panduan Instalasi Lokal (Setup Guide)
+Ikuti langkah-langkah mudah di bawah ini untuk menjalankan Vistara Culture di mesin lokal.
 
-2. **Setup Env** (Lihat `.env.example`)
-   ```env
-   AZURE_LANGUAGE_KEY="xxx"
-   AZURE_LANGUAGE_ENDPOINT="xxx"
-   GEMINI_API_KEY="xxx"
-   ```
+Clone Repository
 
-3. **Run**
-   ```bash
-   npm run dev
-   ```
+Bash
+git clone https://github.com/Maverick-list/vistara_culture.git
+cd vistara_culture
+Install Dependensi
 
----
-*Dibuat dengan cinta untuk Indonesia dan kemajuan Digitalisasi Pariwisata Nusantara.* 🇮🇩
+Bash
+npm ci
+Konfigurasi Environment Variables
+Salin `.env.example# Vistara Culture 🏛️✨
+
+Jelajahi Kekayaan Budaya Nusantara Melalui Eksplorasi Digital Interaktif.
+
+Proyek yang diajukan untuk Kompetisi Web Development I/O Festival 2026 oleh Mavezen Team.
