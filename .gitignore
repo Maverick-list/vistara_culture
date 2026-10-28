@@ -41,3 +41,25 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# Migration additions
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+node_modules/
+dist/
+build/
+.nuxt/
+.cache/
+*.pyc
+__pycache__/
+venv/
+.venv/
+env/
+ENV/
+.ipynb_checkpoints/
+*.log
+Thumbs.db
+desktop.ini
+*.key
